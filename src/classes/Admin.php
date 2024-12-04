@@ -63,7 +63,7 @@ class Admin extends User{
                             <h1 class="text-3xl font-bold">Selamat Datang</h1>
                             <h2 class="text-5xl font-bold text-black">Admin!</h2>
                             <p class="text-orange-500 mt-2">Kamu peringkat</p>
-                            <button onclick="window.location.href='daftarPengajuan.php'" class="mt-4 bg-black text-white py-2 px-6 rounded hover:bg-gray-800">
+                            <button onclick="window.location.href='daftarPengajuan.php'" class="mt-4 bg-black text-white py-2 px-6 rounded-full hover:bg-gray-800">
                                 Validasi Prestasi
                             </button>
                         </div>
@@ -90,7 +90,7 @@ class Admin extends User{
                 <<<HTML
                         <div class="flex justify-between items-center p-4" style="margin: 0; background: none;">
                             <div class="flex items-center ml-auto"> <!-- Added ml-auto to push this div to the right -->
-                                <h3 class="text-xl font-bold">  $nama</h3>
+                                <h3 class="text-md">  $nama</h3>
                                 <img src="{$fotoProfile}" alt="Profile Picture" class="w-10 h-10 rounded-full ml-2">
                             </div>
                         </div>
