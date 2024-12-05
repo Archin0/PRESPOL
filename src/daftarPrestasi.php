@@ -12,7 +12,7 @@ Auth::checkLogin();
 $role = $_SESSION['role'];
 
 $user = null;
-    
+
 if ($role == '1') {
     include_once 'classes/Admin.php';
     $user = new Admin();
@@ -40,6 +40,7 @@ $username = $_SESSION['username'];
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,15 +48,19 @@ $username = $_SESSION['username'];
     <!-- Tailwin CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <style>
         body {
-            background: url('img/homepageGradient.png') no-repeat center center fixed; /* Fixed background */
-            background-size: cover; /* Ensures the image covers the entire area */
-            flex: 1; /* Makes the main content expand to fill the space */
+            background: url('img/homepageGradient.png') no-repeat center center fixed;
+            /* Fixed background */
+            background-size: cover;
+            /* Ensures the image covers the entire area */
+            flex: 1;
+            /* Makes the main content expand to fill the space */
         }
     </style>
 </head>
+
 <body class=" min-h-screen flex flex-col lg:flex-row">
 
     <!-- Sidebar -->
@@ -64,11 +69,13 @@ $username = $_SESSION['username'];
     </aside>
 
     <!-- Main Content -->
-    <main class="ml-[20%] w-[80%] p-8 pb-16 min-h-screen">
-        <?php $user->profile($username); ?>
+    <main class="ml-[20%] w-[80%] p-6 pt-8 min-h-screen">
+        <div>
+            <?php $user->profile($username); ?>
+        </div>
 
         <h1 class="text-2xl font-bold mb-10 mt-6">Daftar Prestasi Mahasiswa</h1>
-        
+
         <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
             <!-- Sorting: Pojok Kiri -->
             <div class="w-full md:w-auto">
@@ -86,8 +93,7 @@ $username = $_SESSION['username'];
                     type="text"
                     id="searchInput"
                     placeholder="Cari berdasarkan nama mahasiswa, kompetisi, atau event"
-                    class="border rounded-l p-2 w-full md:w-96"
-                />
+                    class="border rounded-l p-2 w-full md:w-96" />
                 <button id="searchButton" class="bg-blue-500 text-white px-4 py-2 rounded-r">Cari</button>
             </div>
 
@@ -135,10 +141,10 @@ $username = $_SESSION['username'];
                     <th class="py-3 px-6 border">Juara</th>
                     <th class="py-3 px-6 border">Tingkat Kompetisi</th>
                     <th class="py-3 px-6 border">Tahun</th>
-                    <?php 
-                        if($user instanceof Kajur  || $user instanceof Admin){
-                            echo "<th class='py-3 px-6 border'>Aksi</th>";
-                        }
+                    <?php
+                    if ($user instanceof Kajur  || $user instanceof Admin) {
+                        echo "<th class='py-3 px-6 border'>Aksi</th>";
+                    }
                     ?>
                 </tr>
             </thead>
@@ -210,4 +216,5 @@ $username = $_SESSION['username'];
 </script>
 
 </body>
+
 </html>
